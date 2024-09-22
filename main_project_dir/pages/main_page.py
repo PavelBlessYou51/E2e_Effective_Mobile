@@ -30,10 +30,6 @@ class MainPage(BasePage):
         return item_name, item_price
 
     # Cart page
-    def get_count_added_items(self) -> list[WebElement]:
-        items = self.elements_are_visible(locators.CART_ITEMS)
-        return items
-
     def check_added_item(self) -> tuple[str, str]:
         item = self.get_count_added_items()
         item_name = self.get_product_attributes(item[0], 'name')

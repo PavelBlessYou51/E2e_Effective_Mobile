@@ -52,6 +52,11 @@ class BasePage:
         result = self.get_page_title()
         return result
 
+    def get_count_added_items(self) -> list[WebElement]:
+        """Returns count of added items"""
+        items = self.elements_are_visible(locators.CART_ITEMS)
+        return items
+
     @staticmethod
     def get_product_attributes(element:  WebElement, attr_name: str) -> str:
         """Gets name or price of product"""
